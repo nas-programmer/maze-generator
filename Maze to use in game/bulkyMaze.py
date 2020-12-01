@@ -50,17 +50,10 @@ class Player:
         if not self.collidelist(list_):
             self.x += self.velX
             self.y += self.velY
-        # else:
-        #     self.x -= self.velX
-        #     self.y -= self.velY
 
         self.rect = pygame.Rect((int(self.x), int(self.y)), self.size)
     
     def collidelist(self, list_):
-        # if not self.rect.collidelist(list_) == -1:
-        #     return False
-        # else:
-        #     return True
         for wall in list_:
             temp = pygame.Rect((int(self.x)+self.velX, int(self.y)+self.velY), self.size)
             if temp.colliderect(wall):
